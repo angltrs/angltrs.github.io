@@ -77,8 +77,8 @@ document.addEventListener('DOMContentLoaded', () => {
             obstacles.push({
                 x: Math.random() * (canvas.width - 50),
                 y: 0,
-                width: 43, // Tamaño reducido de los obstáculos
-                height: 43,
+                width: 38, // Tamaño reducido de los obstáculos
+                height: 38,
                 sprite: new Image()
             });
             obstacles[obstacles.length - 1].sprite.src = 'obstacle.png';
