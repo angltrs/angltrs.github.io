@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 obstacles.splice(i, 1);
                 obstacleCount++;
                 updateScore();
-                if (obstacleCount >= 25) {
+                if (obstacleCount >= 30) {  // Cambiado a 30
                     winGame();
                 }
             }
@@ -121,7 +121,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function updateScore() {
-        scoreElement.textContent = `Puntaje: ${obstacleCount} / 25`;
+        scoreElement.textContent = `Puntaje: ${obstacleCount} / 30`;  // Cambiado a 30
     }
 
     function restartGame() {
