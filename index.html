@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego del Dinosaurio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="score">Puntaje: 0 / 25</div>
+        <canvas id="gameCanvas" width="400" height="600"></canvas>
+        <div class="controls">
+            <button id="leftButton"><img src="left.png" alt="Izquierda"></button>
+            <button id="rightButton"><img src="right.png" alt="Derecha"></button>
+        </div>
+        <div id="messageBox" class="message-box hidden">
+            <img id="messageImage" src="" alt="Message">
+            <p id="messageText"></p>
+            <button id="closeButton" class="close-button">Cerrar</button>
+        </div>
+    </div>
+    <script src="game.js"></script>
+</body>
+</html>
