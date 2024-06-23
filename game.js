@@ -120,6 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function loseGame() {
         clearInterval(gameInterval);
+        gameStarted = false;
         messageImage.src = 'lose.png';
         messageText.textContent = 'Perdiste porque no me quieres!! :(';
         messageBox.classList.remove('hidden');
@@ -127,6 +128,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function winGame() {
         clearInterval(gameInterval);
+        gameStarted = false;
         messageImage.src = 'win.png';
         messageText.textContent = 'Te quiero 10000000000000000000% (elevado al cubo)';
         messageBox.classList.remove('hidden');
@@ -143,7 +145,6 @@ document.addEventListener('DOMContentLoaded', () => {
         obstacleCount = 0;
         updateScore();
         gameStarted = false;
-        gameInterval = setInterval(gameLoop, 1000 / 60);
     }
 
     function playSong(songId) {
