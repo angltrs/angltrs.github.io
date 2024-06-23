@@ -8,8 +8,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const messageText = document.getElementById('messageText');
     const closeButton = document.getElementById('closeButton');
     const scoreElement = document.querySelector('.score');
+    const songButtons = document.querySelectorAll('.song-button');
+    const muteButton = document.getElementById('muteButton');
     let dino, obstacles, gameInterval, obstacleCount;
     let gameStarted = false;
+    let currentAudio = null;
+
+    const obstacleSize = 40; // Tamaño reducido de los obstáculos
 
     function startGame() {
         dino = {
@@ -19,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
             height: 50,
             sprite: new Image()
         };
-        dino.sprite.src = 'dino.png';
+        dino.sprite.src = 'dino.png'; // Asegúrate de tener la imagen 'dino.png' disponible
 
         obstacles = [];
         obstacleCount = 0;
@@ -32,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 gameInterval = setInterval(gameLoop, 1000 / 60);
             }
         });
-        
+
         rightButton.addEventListener('click', () => {
             moveRight();
             if (!gameStarted) {
@@ -41,7 +46,39 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        closeButton.addEventListener('click', restartGame);
+        songButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const songId = button.getAttribute('data-song');
+                playSong(songId);
+            });
+        });
+
+        muteButton.addEventListener('click', () => {
+            stopAllSongs();
+        });
+
+        closeButton.addEventListener('click', () => {
+            messageBox.classList.add('hidden');
+            restartGame();
+        });
+    }
+
+    function playSong(songId) {
+        stopAllSongs();
+        currentAudio = document.getElementById(songId);
+        if (currentAudio) {
+            currentAudio.play();
+            currentAudio.loop = false;
+        }
+    }
+
+    function stopAllSongs() {
+        const audios = document.querySelectorAll('audio');
+        audios.forEach(audio => {
+            audio.pause();
+            audio.currentTime = 0;
+        });
+        currentAudio = null;
     }
 
     function moveLeft() {
@@ -63,13 +100,13 @@ document.addEventListener('DOMContentLoaded', () => {
     function update() {
         if (Math.random() < 0.02) {
             obstacles.push({
-                x: Math.random() * (canvas.width - 50),
+                x: Math.random() * (canvas.width - obstacleSize),
                 y: 0,
-                width: 50,
-                height: 50,
+                width: obstacleSize,
+                height: obstacleSize,
                 sprite: new Image()
             });
-            obstacles[obstacles.length - 1].sprite.src = 'obstacle.png';
+            obstacles[obstacles.length - 1].sprite.src = 'obstacle.png'; // Asegúrate de tener la imagen 'obstacle.png' disponible
         }
 
         for (let i = 0; i < obstacles.length; i++) {
@@ -78,7 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 obstacles.splice(i, 1);
                 obstacleCount++;
                 updateScore();
-                if (obstacleCount >= 30) {  // Cambiado a 30
+                if (obstacleCount >= 30) { // Ajustado a 30 para el nuevo límite de ganar
                     winGame();
                 }
             }
@@ -108,24 +145,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function loseGame() {
         clearInterval(gameInterval);
-        messageImage.src = 'lose.png';
+        messageImage.src = 'lose.png'; // Asegúrate de tener la imagen 'lose.png' disponible
         messageText.textContent = 'Perdiste porque no me quieres!! :(';
         messageBox.classList.remove('hidden');
     }
 
     function winGame() {
         clearInterval(gameInterval);
-        messageImage.src = 'win.png';
+        messageImage.src = 'win.png'; // Asegúrate de tener la imagen 'win.png' disponible
         messageText.textContent = 'Te quiero 10000000000000000000% (elevado al cubo)';
         messageBox.classList.remove('hidden');
     }
 
     function updateScore() {
-        scoreElement.textContent = `Puntaje: ${obstacleCount} / 30`;  // Cambiado a 30
+        scoreElement.textContent = `Puntaje: ${obstacleCount} / 30`; // Actualizado a 30 para el nuevo límite de ganar
     }
 
     function restartGame() {
-        messageBox.classList.add('hidden');
         dino.x = 175;
         obstacles = [];
         obstacleCount = 0;
