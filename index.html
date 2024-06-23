@@ -8,26 +8,30 @@
 </head>
 <body>
     <div class="game-container">
-        <div class="score">Puntaje: 0 / 25</div>
+        <div class="score">Puntaje: 0 / 30</div>
         <canvas id="gameCanvas" width="400" height="600"></canvas>
         <div class="controls">
-    <button id="leftButton"><img src="left.png" alt="Izquierda"></button>
-    <button id="rightButton"><img src="right.png" alt="Derecha"></button>
-</div>
-<div class="song-buttons">
-    <button class="song-button" data-song="igual_que_un_angel">IGUAL QUE UN ANGEL</button>
-    <button class="song-button" data-song="rosita_fresita">ROSITA FRESITA</button>
-    <button class="song-button" data-song="si_no_quieres_no">SI NO QUIERES NO</button>
-    <button class="song-button" data-song="madonna">MADONNA</button>
-    <button id="muteButton" class="song-button">SILENCIAR</button>
-</div>
-
+            <button id="leftButton"><img src="left.png" alt="Izquierda"></button>
+            <button id="rightButton"><img src="right.png" alt="Derecha"></button>
+        </div>
+        <div class="song-buttons">
+            <button class="song-button" data-song="igualangel">IGUAL QUE UN ANGEL</button>
+            <button class="song-button" data-song="rositafresita">ROSITA FRESITA</button>
+            <button class="song-button" data-song="people2">SI NO QUIERES NO</button>
+            <button class="song-button" data-song="madonna">MADONNA</button>
+            <button id="muteButton" class="song-button">SILENCIAR</button>
+        </div>
         <div id="messageBox" class="message-box hidden">
             <img id="messageImage" src="" alt="Message">
             <p id="messageText"></p>
             <button id="closeButton" class="close-button">Cerrar</button>
         </div>
+        <audio id="igualangel" src="igualangel.mp3"></audio>
+        <audio id="rositafresita" src="rositafresita.mp3"></audio>
+        <audio id="people2" src="sinoquieres.mp3"></audio>
+        <audio id="madonna" src="madonna.mp3"></audio>
     </div>
     <script src="game.js"></script>
 </body>
 </html>
+
