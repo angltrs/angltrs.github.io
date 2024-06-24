@@ -19,8 +19,8 @@ document.addEventListener('DOMContentLoaded', () => {
         dino = {
             x: 175,
             y: canvas.height - 80,
-            width: 57,
-            height: 57,
+            width: 70,
+            height: 70,
             sprite: new Image()
         };
         dino.sprite.src = 'dinooo.png';
