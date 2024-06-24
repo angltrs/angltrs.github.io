@@ -5,17 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dinosaurio (A)</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="icono.png" type="image/png">
-    <link rel="apple-touch-icon" href="icono.png">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="Dinosaurio">
-    <meta name="mobile-web-app-capable" content="yes">
-    <link rel="manifest" href="manifest.json">
 </head>
 <body>
     <div class="game-container">
-        <div class="score">Puntaje: 0 / 30</div>
+        <div class="score">Puntaje: 0 / 50</div>
         <canvas id="gameCanvas" width="400" height="600"></canvas>
         <div class="controls">
             <button id="leftButton"><img src="left.png" alt="Izquierda"></button>
@@ -27,6 +20,9 @@
             <button class="song-button" data-song="people2">SI NO QUIERES NO</button>
             <button class="song-button" data-song="madonna">MADONNA</button>
             <button id="muteButton" class="song-button">SILENCIAR</button>
+        </div>
+        <div class="button-container">
+            <button class="song-button" onclick="location.href='sec.html'">INFINITO</button>
         </div>
         <div id="messageBox" class="message-box hidden">
             <img id="messageImage" src="" alt="Message">
