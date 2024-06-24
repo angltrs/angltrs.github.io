@@ -19,8 +19,8 @@ document.addEventListener('DOMContentLoaded', () => {
         dino = {
             x: 175,
             y: canvas.height - 80,
-            width: 90,
-            height: 90,
+            width: 80,
+            height: 80,
             sprite: new Image()
         };
         dino.sprite.src = 'dinooo.png';
@@ -77,8 +77,8 @@ document.addEventListener('DOMContentLoaded', () => {
             obstacles.push({
                 x: Math.random() * (canvas.width - 50),
                 y: 0,
-                width: 25,
-                height: 25,
+                width: 20,
+                height: 20,
                 sprite: new Image()
             });
             obstacles[obstacles.length - 1].sprite.src = 'obstacleee.png';
