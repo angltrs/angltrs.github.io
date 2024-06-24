@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dinosaurio (A) Infinito</title>
+    <link rel="stylesheet" href="stylesss.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="score">Puntaje: 0 / 50</div>
+        <canvas id="gameCanvas" width="400" height="600"></canvas>
+        <div class="controls">
+            <button id="leftButton"><img src="left.png" alt="Izquierda"></button>
+            <button id="rightButton"><img src="right.png" alt="Derecha"></button>
+        </div>
+        <div class="song-buttons">
+            <button class="song-button" data-song="igualangel">IGUAL QUE UN ANGEL</button>
+            <button class="song-button" data-song="rositafresita">ROSITA FRESITA</button>
+            <button class="song-button" data-song="people2">ROMPE LA DOMPE</button>
+            <button class="song-button" data-song="madonna">NATAAOKI</button>
+            <button id="muteButton" class="song-button">SILENCIAR</button>
+        </div>
+        <div class="button-container">
+            <button class="song-button" onclick="location.href='index.html'">VOLVER</button>
+        </div>
+        <div id="messageBox" class="message-box hidden">
+            <img id="messageImage" src="" alt="Message">
+            <p id="messageText"></p>
+            <button id="closeButton" class="close-button">Cerrar</button>
+        </div>
+        <audio id="igualangel" src="igualangel.mp3"></audio>
+        <audio id="rositafresita" src="rositafresita.mp3"></audio>
+        <audio id="people2" src="rompe.mp3"></audio>
+        <audio id="madonna" src="nata.mp3"></audio>
+    </div>
+    <script src="games.js"></script>
+</body>
+</html>
+

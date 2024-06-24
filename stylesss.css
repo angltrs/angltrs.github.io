@@ -1,0 +1,83 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #E290E7 ;
+    font-family: Arial, sans-serif;
+}
+
+.game-container {
+    position: relative;
+    text-align: center;
+}
+
+.score {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 24px;
+    color: black;
+    z-index: 1;
+    font-family: 'Elsie', cursive;
+}
+
+.controls {
+    margin-top: 10px;
+}
+
+#leftButton, #rightButton {
+    background: none;
+    border: none;
+}
+
+.hidden {
+    display: none;
+}
+
+.message-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: white;
+    border: 2px solid black;
+    text-align: center;
+}
+
+.close-button {
+    background-color: pink;
+    border: none;
+    padding: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+#gameCanvas {
+    background: url('backgroundd.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+.song-buttons {
+    
+margin-top: 10px;
+    
+display: flex;
+    
+justify-content: center;
+}
+
+
+.song-button {
+    background-color: pink;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 5px;
+    border-radius: 20px;
+    
+cursor: pointer;
+}
+
